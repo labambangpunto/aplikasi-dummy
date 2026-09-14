@@ -1,0 +1,20 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: format
+      glob: "*.dart"
+      run: dart format --set-exit-if-changed {staged_files}
+
+    - name: analyze
+      glob: "*.dart"
+      run: flutter analyze
+
+commit-msg:
+  jobs:
+    - name: cek pesan commit tidak kosong
+      run: test -s {1}
+
+pre-push:
+  jobs:
+    - name: run tests
+      run: flutter test
