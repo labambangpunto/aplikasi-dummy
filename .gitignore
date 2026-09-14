@@ -1,5 +1,6 @@
 # Hasil kompilasi dan build
 /build/
+/releases/
 
 # File cache dan editor lokal
 /.dart_tool/
